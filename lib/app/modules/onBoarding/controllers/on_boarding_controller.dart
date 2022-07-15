@@ -1,11 +1,19 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/onBoarding/model/onBoarding_info.dart';
 
 class OnBoardingController extends GetxController {
   //TODO: Implement OnBoardingController
+  final pageController = PageController().obs;
+  var isLastPage = false.obs;
+
   List<OnboardingInfo> onboardingPages = [
-     OnboardingInfo('asset/images/onboarding_images/Home run-amico.png', 'One man practicing sportsmanship is far better than 50 preaching it.'),
-     OnboardingInfo('asset/images/onboarding_images/Junior soccer-amico.png', 'One man practicing sportsmanship is far better than 50 preaching it.'),
+    OnboardingInfo('asset/images/onboarding_images/Home run-amico.png',
+        'One man practicing sportsmanship is far better than 50 preaching it.'),
+    OnboardingInfo('asset/images/onboarding_images/Home run-amico.png',
+        'One man practicing sportsmanship is far better than 50 preaching it.'),
+    OnboardingInfo('asset/images/onboarding_images/Junior soccer-amico.png',
+        'One man practicing sportsmanship is far better than 50 preaching it.'),
   ];
 
   final count = 0.obs;
@@ -21,5 +29,6 @@ class OnBoardingController extends GetxController {
 
   @override
   void onClose() {}
+
   void increment() => count.value++;
 }
