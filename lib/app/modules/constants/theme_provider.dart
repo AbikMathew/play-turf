@@ -9,7 +9,6 @@ class AppThemes {
     fontFamily: 'Montserrat',
     textTheme: const TextTheme(
       headlineSmall: TextStyle(
-
         fontWeight: FontWeight.w600,
         color: Colors.white,
       ),
@@ -19,11 +18,15 @@ class AppThemes {
         color: primaryGreen,
       ),
       titleMedium: TextStyle(
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: FontWeight.bold,
         color: Colors.white,
-      )
-           
+      ),
+      titleSmall: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
     ),
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -32,7 +35,6 @@ class AppThemes {
       ),
     ),
     scaffoldBackgroundColor: Colors.black,
-    
   );
 
   static final lightTheme = ThemeData(

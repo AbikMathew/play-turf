@@ -6,6 +6,7 @@ import 'package:play_turf/app/routes/app_pages.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../widgets/custom_buttons.dart';
 import '../controllers/on_boarding_controller.dart';
 
 class OnBoardingView extends GetView<OnBoardingController> {
@@ -56,36 +57,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
   }
 }
 
-class GreenButton extends StatelessWidget {
-  const GreenButton({
-    required this.text,
-    this.width = 250,
-    required this.onPressed,
-    Key? key,
-  }) : super(key: key);
-  final VoidCallback onPressed;
-  final double width;
-  final String text;
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      child: Container(
-        width: width,
-        height: 50,
-        decoration: BoxDecoration(
-          color: primaryGreen,
-          borderRadius: BorderRadius.circular(11),
-        ),
-        child: Center(
-            child: Text(
-          text,
-          style: Theme.of(context).textTheme.headlineSmall,
-        )),
-      ),
-    );
-  }
-}
+
 
 class BottomBar extends StatelessWidget {
   const BottomBar({
