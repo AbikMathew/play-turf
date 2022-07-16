@@ -5,7 +5,7 @@ import 'package:play_turf/app/modules/onBoarding/model/onBoarding_info.dart';
 class OnBoardingController extends GetxController {
   //TODO: Implement OnBoardingController
   final pageController = PageController().obs;
-  var isLastPage = false.obs;
+  final isLastPage = false.obs;
 
   List<OnboardingInfo> onboardingPages = [
     OnboardingInfo('asset/images/onboarding_images/Home run-amico.png',
@@ -28,7 +28,9 @@ class OnBoardingController extends GetxController {
   }
 
   @override
-  void onClose() {}
+  void onClose() {
+    
+  }
 
   void increment() => count.value++;
 }

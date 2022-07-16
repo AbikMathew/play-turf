@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/constants/colors.dart';
+import 'package:play_turf/app/routes/app_pages.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -17,8 +18,8 @@ class OnBoardingView extends GetView<OnBoardingController> {
     return Scaffold(
       body: PageView.builder(
           onPageChanged: (index) {
+            log('vanno ${controller.isLastPage.value} ith');
             if (index == lastPage) {
-              log('vanno');
               controller.isLastPage.value = true;
             }
           },
@@ -44,17 +45,46 @@ class OnBoardingView extends GetView<OnBoardingController> {
         height: 100,
         color: Colors.black,
         child: Obx(() => controller.isLastPage.value
-            ? TextButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(primaryGreen),
-                ),
-                child: Text('Yaa mone', style: TextStyle(color: Colors.white),),
-              )
+            ? Center(
+                child: CustomButton(
+                text: 'Get Started',
+                onPressed: () => Get.offAllNamed(Routes.LOGIN),
+              ))
             : BottomBar(
                 controller: controller,
                 lastPage: lastPage,
               )),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({
+    required this.text,
+    this.width = 250,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
+  final VoidCallback onPressed;
+  final double width;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: width,
+        height: 50,
+        decoration: BoxDecoration(
+          color: primaryGreen,
+          borderRadius: BorderRadius.circular(11),
+        ),
+        child: Center(
+            child: Text(
+          text,
+          style: Theme.of(context).textTheme.headlineSmall,
+        )),
       ),
     );
   }
