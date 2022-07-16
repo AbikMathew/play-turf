@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -18,7 +16,6 @@ class OnBoardingView extends GetView<OnBoardingController> {
     return Scaffold(
       body: PageView.builder(
           onPageChanged: (index) {
-            log('vanno ${controller.isLastPage.value} ith');
             if (index == lastPage) {
               controller.isLastPage.value = true;
             }
@@ -46,7 +43,7 @@ class OnBoardingView extends GetView<OnBoardingController> {
         color: Colors.black,
         child: Obx(() => controller.isLastPage.value
             ? Center(
-                child: CustomButton(
+                child: GreenButton(
                 text: 'Get Started',
                 onPressed: () => Get.offAllNamed(Routes.LOGIN),
               ))
@@ -59,8 +56,8 @@ class OnBoardingView extends GetView<OnBoardingController> {
   }
 }
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+class GreenButton extends StatelessWidget {
+  const GreenButton({
     required this.text,
     this.width = 250,
     required this.onPressed,
@@ -95,16 +92,10 @@ class BottomBar extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.lastPage,
-    // required this.controller,
-    // required this.controller,
-    // required this.controller,
   }) : super(key: key);
 
   final OnBoardingController controller;
   final int lastPage;
-  // final OnBoardingController controller;
-  // final OnBoardingController controller;
-  // final OnBoardingController controller;
 
   @override
   Widget build(BuildContext context) {

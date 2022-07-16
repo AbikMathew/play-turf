@@ -9,25 +9,7 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('LoginView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            const Text(
-              'LoginView is working',
-              style: TextStyle(fontSize: 20),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  controller.login();
-                },
-                child: const Text('Login'))
-          ],
-        ),
-      ),
+      
     );
   }
 }
