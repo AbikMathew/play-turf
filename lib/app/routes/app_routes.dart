@@ -8,6 +8,7 @@ abstract class Routes {
   static const FAVORITES = _Paths.FAVORITES;
   static const SPLASH = _Paths.SPLASH;
   static const ON_BOARDING = _Paths.ON_BOARDING;
+  static const TURF_DETAILS = _Paths.TURF_DETAILS;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const FAVORITES = '/favorites';
   static const SPLASH = '/splash';
   static const ON_BOARDING = '/on-boarding';
+  static const TURF_DETAILS = '/turf-details';
 }

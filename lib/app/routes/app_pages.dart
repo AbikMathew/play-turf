@@ -4,6 +4,8 @@ import 'package:play_turf/app/modules/onBoarding/bindings/on_boarding_binding.da
 import 'package:play_turf/app/modules/onBoarding/views/on_boarding_view.dart';
 import 'package:play_turf/app/modules/splash/bindings/splash_binding.dart';
 import 'package:play_turf/app/modules/splash/views/splash_view.dart';
+import 'package:play_turf/app/modules/turf_details/bindings/turf_details_binding.dart';
+import 'package:play_turf/app/modules/turf_details/views/turf_details_view.dart';
 
 import '../modules/favorites/bindings/favorites_binding.dart';
 import '../modules/favorites/views/favorites_view.dart';
@@ -44,6 +46,11 @@ class AppPages {
       name: _Paths.ON_BOARDING,
       page: () => OnBoardingView(),
       binding: OnBoardingBinding(),
+    ),
+    GetPage(
+      name: _Paths.TURF_DETAILS,
+      page: () => TurfDetailsView(),
+      binding: TurfDetailsBinding(),
     ),
   ];
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 import 'package:play_turf/app/modules/constants/colors.dart';
 import 'package:play_turf/app/modules/constants/theme_provider.dart';
+import 'package:play_turf/app/modules/home/views/home_view.dart';
 import 'package:play_turf/app/modules/login/views/sign_in_view.dart';
 
 import 'package:sizer/sizer.dart';
@@ -19,9 +20,10 @@ void main() async {
       darkTheme: AppThemes.darkTheme,
       theme: AppThemes.lightTheme,
       title: "Application",
-      home: SignUpView(),
+      home: HomeView(),
       // initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
     );
   }));
 }
