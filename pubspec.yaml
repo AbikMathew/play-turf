@@ -25,6 +25,8 @@ flutter:
     - asset/json/
     - asset/images/onboarding_images/
     - asset/images/login/
+    - asset/images/favorites/
+    - asset/images/turf/
   fonts: 
     - family: Montserrat
       fonts: 

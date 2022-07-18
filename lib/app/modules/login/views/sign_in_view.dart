@@ -36,7 +36,7 @@ class SignInView extends GetView {
                 icon: Icons.key_outlined),
             SizedBox(height: 10.h),
             GreenButton(
-              text: 'Sign up',
+              text: 'Sign in',
               onPressed: () {
                 Get.to(SignUpView());
               },

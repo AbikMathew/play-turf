@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:play_turf/app/routes/app_pages.dart';
 import 'package:sizer/sizer.dart';
 
 import '../constants/colors.dart';
@@ -35,6 +37,66 @@ class GreenButton extends StatelessWidget {
   }
 }
 
+class GreyButton extends StatelessWidget {
+  const GreyButton({
+    required this.text,
+    this.width = 130,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
+  final VoidCallback onPressed;
+  final double width;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: width,
+        height: 45,
+        decoration: BoxDecoration(
+          color: kLightGrey,
+          borderRadius: kBorderRadius,
+        ),
+        child: Center(
+            child: Text(
+          text,
+          style: Theme.of(context).textTheme.titleMedium,
+        )),
+      ),
+    );
+  }
+}
+class GreenButtonS extends StatelessWidget {
+  const GreenButtonS({
+    required this.text,
+    this.width = 180,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
+  final VoidCallback onPressed;
+  final double width;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: width,
+        height: 45,
+        decoration: BoxDecoration(
+          color: kPrimaryGreen,
+          borderRadius: kBorderRadius,
+        ),
+        child: Center(
+            child: Text(
+          text,
+          style: Theme.of(context).textTheme.titleMedium,
+        )),
+      ),
+    );
+  }
+}
 class GoogleSingIn extends StatelessWidget {
   const GoogleSingIn({
     Key? key,
@@ -43,7 +105,9 @@ class GoogleSingIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(Routes.FAVORITES);
+      },
       child: Center(
         child: Container(
           height: 55,
