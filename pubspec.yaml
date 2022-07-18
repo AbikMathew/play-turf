@@ -24,6 +24,7 @@ flutter:
   assets: 
     - asset/json/
     - asset/images/onboarding_images/
+    - asset/images/login/
   fonts: 
     - family: Montserrat
       fonts: 

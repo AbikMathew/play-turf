@@ -27,6 +27,7 @@ class LoginController extends GetxController {
 
   login() {
     getStorage.write("first_time", false); //For not showing Onboarding/login page but go directly to home page after first time
+    
     Get.offAllNamed(Routes.HOME);
   }
 }

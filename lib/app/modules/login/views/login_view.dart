@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/constants/colors.dart';
+import 'package:play_turf/app/modules/login/views/sign_in_view.dart';
 import 'package:play_turf/app/modules/widgets/custom_buttons.dart';
 import 'package:sizer/sizer.dart';
 
 import '../controllers/login_controller.dart';
+import 'sign_up_view.dart';
+// import 'sign_in_view.temp';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
@@ -17,7 +20,7 @@ class LoginView extends GetView<LoginController> {
           SizedBox(height: 15.h),
           Image.asset('asset/images/onboarding_images/login.png'),
           const Spacer(),
-          GreenButton(text: 'Sign up', onPressed: () {}),
+          GreenButton(text: 'Sign up', onPressed: () => Get.to(SignUpView())),
           const SizedBox(height: 15),
           const AlreadyHaveAccount(),
           SizedBox(height: 10.h),
@@ -48,7 +51,7 @@ class AlreadyHaveAccount extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
-                .copyWith(color: primaryGreen),
+                .copyWith(color: kPrimaryGreen),
           ),
         ),
       ],

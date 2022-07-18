@@ -85,7 +85,7 @@ class BottomBar extends StatelessWidget {
             () => SmoothPageIndicator(
               controller: controller.pageController.value,
               count: controller.onboardingPages.length,
-              effect: const WormEffect(activeDotColor: primaryGreen),
+              effect: const WormEffect(activeDotColor: kPrimaryGreen),
             ),
           ),
         ),
