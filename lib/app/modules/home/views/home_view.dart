@@ -88,7 +88,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               InkWell(
-                // onTap: ()=>Get.toNamed(AppPages.OFFER_DETAIL),
+                 onTap: ()=>Get.toNamed(Routes.TURF_DETAILS),
                 child: SizedBox(
                   width: 90.w,
                   child: CarouselSlider.builder(

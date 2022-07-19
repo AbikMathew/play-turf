@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
 
 class AppThemes {
   static final darkTheme = ThemeData(
+    iconTheme: const IconThemeData(color: Colors.white),
     primarySwatch: Colors.grey,
-    fontFamily: 'Montserrat',
+fontFamily: GoogleFonts.montserrat().fontFamily,
     textTheme: const TextTheme(
         headlineMedium: TextStyle(
           fontWeight: FontWeight.w600,
@@ -31,6 +33,11 @@ class AppThemes {
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
+        labelLarge: TextStyle(color: Colors.white),
+        labelMedium: TextStyle(color: Colors.white),
+        labelSmall: TextStyle(color: Colors.white),
+        bodySmall: TextStyle(color: Colors.white),
+        bodyMedium: TextStyle(color: Colors.white),
         bodyLarge: TextStyle(
           fontSize: 16,
           // fontWeight: FontWeight.bold,
