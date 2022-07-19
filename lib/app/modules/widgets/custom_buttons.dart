@@ -40,7 +40,7 @@ class GreenButton extends StatelessWidget {
 class GreyButton extends StatelessWidget {
   const GreyButton({
     required this.text,
-    this.width = 130,
+    this.width = 120,
     required this.onPressed,
     Key? key,
   }) : super(key: key);
@@ -55,18 +55,21 @@ class GreyButton extends StatelessWidget {
         width: width,
         height: 45,
         decoration: BoxDecoration(
-          color: kLightGrey,
+          color: kButtonGrey,
           borderRadius: kBorderRadius,
         ),
         child: Center(
-            child: Text(
-          text,
-          style: Theme.of(context).textTheme.titleMedium,
-        )),
+          child: Text(text,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .copyWith(color: Colors.black)),
+        ),
       ),
     );
   }
 }
+
 class GreenButtonS extends StatelessWidget {
   const GreenButtonS({
     required this.text,
@@ -97,6 +100,38 @@ class GreenButtonS extends StatelessWidget {
     );
   }
 }
+
+class RedButton extends StatelessWidget {
+  const RedButton({
+    required this.text,
+    this.width = 120,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
+  final VoidCallback onPressed;
+  final double width;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: width,
+        height: 45,
+        decoration: BoxDecoration(
+          color: Color(0xFFCD0C0C),
+          borderRadius: kBorderRadius,
+        ),
+        child: Center(
+            child: Text(
+          text,
+          style: Theme.of(context).textTheme.titleMedium,
+        )),
+      ),
+    );
+  }
+}
+
 class GoogleSingIn extends StatelessWidget {
   const GoogleSingIn({
     Key? key,

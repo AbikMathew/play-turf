@@ -44,7 +44,9 @@ class AppThemes {
           color: Colors.white,
         )),
     appBarTheme: const AppBarTheme(
-      titleTextStyle: TextStyle(color: Colors.white),
+      elevation: 0,
+      titleTextStyle: TextStyle(
+          color: kPrimaryGreen, fontSize: 25),
       color: Colors.black,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.black,

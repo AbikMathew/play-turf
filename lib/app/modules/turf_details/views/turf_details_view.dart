@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/constants/colors.dart';
@@ -14,14 +15,20 @@ import '../controllers/turf_details_controller.dart';
 class TurfDetailsView extends GetView<TurfDetailsController> {
   @override
   Widget build(BuildContext context) {
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    //     statusBarColor: Colors.transparent));
     return Scaffold(
+      extendBody: true,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            systemOverlayStyle: const SystemUiOverlayStyle(
+                statusBarColor: Colors.transparent,
+                statusBarIconBrightness: Brightness.dark),
             stretch: true,
             expandedHeight: 35.h,
             flexibleSpace: FlexibleSpaceBar(
-              title: const Text('Turf Details'),
+              // title: const Text('Turf Details'),
               background: Image.asset(
                 'asset/images/turf/turf_image_2.jpg',
                 fit: BoxFit.cover,
@@ -69,7 +76,7 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            TextButton(onPressed: () {}, child: Text('Cancel')),
+                            TextButton(onPressed: () {}, child: const Text('Cancel')),
                             GreenButtonS(
                                 text: 'Book Now',
                                 onPressed: () {
@@ -95,7 +102,7 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Available Time Slots'),
+        const Text('Available Time Slots'),
         kHeight,
         Container(
           decoration: BoxDecoration(
@@ -106,23 +113,23 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
             children: [
               TextButton(
                 onPressed: () {},
-                child: Text('9 am'),
+                child: const Text('9 am'),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text('10 am'),
+                child: const Text('10 am'),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text('11 am'),
+                child: const Text('11 am'),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text('12 am'),
+                child: const Text('12 am'),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text('1 pm'),
+                child: const Text('1 pm'),
               ),
             ],
           ),
@@ -134,7 +141,7 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
   Row sectionSelection() {
     return Row(
       children: [
-        Text('Section'),
+        const Text('Section'),
         kWidth,
         Container(
           width: 100,
@@ -149,7 +156,7 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
               child: Text('Morning', style: TextStyle(color: Colors.black))),
         ),
         kWidth20,
-        Text('Evening'),
+        const Text('Evening'),
       ],
     );
   }

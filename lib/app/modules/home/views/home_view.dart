@@ -53,9 +53,9 @@ class HomeView extends GetView<HomeController> {
     ];
 
     return Scaffold(
-        drawer: CustomDrawer(),
+        drawer: const CustomDrawer(),
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: const IconThemeData(color: Colors.white),
           elevation: 0,
           backgroundColor: Colors.black,
           title: const Text('Hi Abik',
@@ -70,7 +70,7 @@ class HomeView extends GetView<HomeController> {
                 width: 90.w,
                 child: CarouselSlider.builder(
                   options: CarouselOptions(
-                    autoPlay: true,
+                    // autoPlay: true,
                     padEnds: false,
                     viewportFraction: 1,
                   ),
@@ -88,7 +88,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               InkWell(
-                 onTap: ()=>Get.toNamed(Routes.TURF_DETAILS),
+                onTap: () => Get.toNamed(Routes.TURF_DETAILS),
                 child: SizedBox(
                   width: 90.w,
                   child: CarouselSlider.builder(
@@ -152,19 +152,19 @@ class CustomDrawer extends StatelessWidget {
             title: const Text(
               "My Bookings",
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.shopping_cart,
               color: Colors.white,
             ),
             onTap: () {
-              // Get.toNamed(AppPages.HOME);
+              Get.toNamed(Routes.MY_BOOKING);
             },
           ),
           ListTile(
             title: const Text(
               "My Favorites",
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.favorite,
               color: Colors.white,
             ),
@@ -176,7 +176,7 @@ class CustomDrawer extends StatelessWidget {
             title: const Text(
               "Settings",
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.settings,
               color: Colors.white,
             ),
@@ -188,18 +188,19 @@ class CustomDrawer extends StatelessWidget {
             title: const Text(
               "Invite a friend",
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.person_add,
               color: Colors.white,
             ),
             onTap: () {
               // Get.toNamed(AppPages.HOME);
             },
-          ),  ListTile(
+          ),
+          ListTile(
             title: const Text(
               "Log out",
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.logout,
               color: Colors.white,
             ),
@@ -207,10 +208,12 @@ class CustomDrawer extends StatelessWidget {
               // Get.toNamed(AppPages.HOME);
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 270,
           ),
-          Center(child: Text("Version 1.0.0", style: TextStyle(color: Colors.white))),
+          const Center(
+              child: const Text("Version 1.0.0",
+                  style: TextStyle(color: Colors.white))),
         ],
       ),
     );
