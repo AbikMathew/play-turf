@@ -8,7 +8,7 @@ class AppThemes {
   static final darkTheme = ThemeData(
     iconTheme: const IconThemeData(color: Colors.white),
     primarySwatch: Colors.grey,
-fontFamily: GoogleFonts.montserrat().fontFamily,
+    fontFamily: GoogleFonts.montserrat().fontFamily,
     textTheme: const TextTheme(
         headlineMedium: TextStyle(
           fontWeight: FontWeight.w600,
@@ -44,6 +44,8 @@ fontFamily: GoogleFonts.montserrat().fontFamily,
           color: Colors.white,
         )),
     appBarTheme: const AppBarTheme(
+      titleTextStyle: TextStyle(color: Colors.white),
+      color: Colors.black,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.black,
         statusBarIconBrightness: Brightness.light,

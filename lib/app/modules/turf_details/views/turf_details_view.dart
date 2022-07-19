@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/constants/colors.dart';
 import 'package:play_turf/app/modules/constants/ui.dart';
+import 'package:play_turf/app/modules/turf_details/views/booking_confirmation_view.dart';
+import 'package:play_turf/app/modules/widgets/custom_buttons.dart';
 import 'package:sizer/sizer.dart';
 
 import '../controllers/turf_details_controller.dart';
@@ -17,7 +19,7 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
         slivers: [
           SliverAppBar(
             stretch: true,
-            expandedHeight: 350,
+            expandedHeight: 35.h,
             flexibleSpace: FlexibleSpaceBar(
               title: const Text('Turf Details'),
               background: Image.asset(
@@ -59,12 +61,23 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
                             onTap: () {}),
                         const Text('Book Here'),
                         dateSelection(),
-                        kHeight,
+                        kHeight20,
                         sectionSelection(),
-                        kHeight,
+                        kHeight20,
                         selectDate(),
                         kHeight20,
-  
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            TextButton(onPressed: () {}, child: Text('Cancel')),
+                            GreenButtonS(
+                                text: 'Book Now',
+                                onPressed: () {
+                                  Get.to(BookingConfirmationView());
+                                  // Get.defaultDialog();
+                                })
+                          ],
+                        )
                       ],
                     ),
                   ),
@@ -80,42 +93,42 @@ class TurfDetailsView extends GetView<TurfDetailsController> {
 
   Column selectDate() {
     return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Available Time Slots'),
-                          kHeight,
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: kBorderRadius,
-                              color: kLightGrey,
-                            ),
-                            child: Row(
-                              children: [
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text('9 am'),
-                                ),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text('10 am'),
-                                ),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text('11 am'),
-                                ),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text('12 am'),
-                                ),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text('1 pm'),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
-                      );
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('Available Time Slots'),
+        kHeight,
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: kBorderRadius,
+            color: kLightGrey,
+          ),
+          child: Row(
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Text('9 am'),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text('10 am'),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text('11 am'),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text('12 am'),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text('1 pm'),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
   }
 
   Row sectionSelection() {

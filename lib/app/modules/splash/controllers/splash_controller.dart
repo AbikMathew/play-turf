@@ -22,11 +22,11 @@ class SplashController extends GetxController {
     if (getStorage.read('first_time') == false) {
       Future.delayed(const Duration(milliseconds: 1500), () {
         Get.offAllNamed(Routes.ON_BOARDING);
-        // Get.offAllNamed(Routes.HOME);
       });
     } else {
       Future.delayed(const Duration(milliseconds: 1500), () {
-        Get.offAllNamed(Routes.SPLASH);
+        Get.offAllNamed(Routes.HOME);
+        // Get.offAllNamed(Routes.SPLASH);
       });
     }
   }

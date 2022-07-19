@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import 'package:play_turf/app/modules/my_booking/bindings/my_booking_binding.dart';
+import 'package:play_turf/app/modules/my_booking/views/my_booking_view.dart';
 import 'package:play_turf/app/modules/onBoarding/bindings/on_boarding_binding.dart';
 import 'package:play_turf/app/modules/onBoarding/views/on_boarding_view.dart';
 import 'package:play_turf/app/modules/splash/bindings/splash_binding.dart';
@@ -19,7 +21,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.MY_BOOKING;
 
   static final routes = [
     GetPage(
@@ -51,6 +53,11 @@ class AppPages {
       name: _Paths.TURF_DETAILS,
       page: () => TurfDetailsView(),
       binding: TurfDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.MY_BOOKING,
+      page: () => MyBookingView(),
+      binding: MyBookingBinding(),
     ),
   ];
 }

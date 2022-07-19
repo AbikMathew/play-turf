@@ -29,9 +29,9 @@ flutter:
     - asset/images/login/
     - asset/images/favorites/
     - asset/images/turf/
-  fonts: 
-    - family: Montserrat
-      fonts: 
-        - asset: asset/font/Montserrat-VariableFont_wght.ttf
+  # fonts: 
+  #   - family: Montserrat
+  #     fonts: 
+  #       - asset: asset/font/Montserrat-VariableFont_wght.ttf
   uses-material-design: true
 
