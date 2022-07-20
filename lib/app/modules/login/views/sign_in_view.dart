@@ -57,11 +57,13 @@ class CustomTextField extends StatelessWidget {
     required this.labelText,
     required this.hintText,
     required this.icon,
+    this.suffixIcon,
   }) : super(key: key);
 
   final String labelText;
   final String hintText;
   final IconData icon;
+  final IconData? suffixIcon;
   // final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
@@ -82,6 +84,9 @@ class CustomTextField extends StatelessWidget {
             labelStyle: Theme.of(context).textTheme.bodyLarge,
             hintStyle: Theme.of(context).textTheme.bodyLarge,
             prefixIcon: Icon(icon, color: Colors.white70),
+            suffixIcon: suffixIcon != null
+                ? Icon(suffixIcon, color: Colors.white70)
+                : null,
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             border: OutlineInputBorder(

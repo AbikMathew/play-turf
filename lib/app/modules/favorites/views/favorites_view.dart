@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/constants/colors.dart';
+import 'package:play_turf/app/modules/constants/ui.dart';
 import 'package:play_turf/app/modules/widgets/custom_buttons.dart';
+import 'package:play_turf/app/routes/app_pages.dart';
 import 'package:sizer/sizer.dart';
 
 import '../controllers/favorites_controller.dart';
@@ -60,10 +62,41 @@ class FavoritesView extends GetView<FavoritesController> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GreyButton(text: 'Remove', onPressed: () {}),
+                      GreyButton(
+                          text: 'Remove',
+                          onPressed: () {
+                            Get.defaultDialog(
+                              contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 10,
+                              ),
+                              titlePadding: const EdgeInsets.all(25),
+                              radius: 10,
+                              backgroundColor: Colors.black.withOpacity(0.7),
+                              titleStyle:
+                                  Theme.of(context).textTheme.headlineSmall,
+                              title: 'Remove from Favorites',
+                              content: const Text(
+                                  'Are you sure you want to remove Canon Truf from the favorites?'),
+                              actions: [
+                                GreyButton(
+                                    text: 'Cancel',
+                                    onPressed: () {
+                                      Get.back();
+                                    }),
+                                RedButton(
+                                    text: 'Confirm',
+                                    onPressed: () {
+                                      Get.back();
+                                    }),
+                              ],
+                            );
+                          }),
                       GreenButtonS(
                         text: 'Book Now',
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(Routes.TURF_DETAILS);
+                        },
                       ),
                     ],
                   ),

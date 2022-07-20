@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -13,7 +15,7 @@ class BookingConfirmationView extends GetView {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Booking Confirmation'),
-        titleTextStyle: const TextStyle(color: Colors.white),
+        // titleTextStyle: const TextStyle(color: Colors.white),
         centerTitle: true,
       ),
       body: Padding(
@@ -22,26 +24,42 @@ class BookingConfirmationView extends GetView {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'Center Details',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
-              centerDetailsTable(),
+              centerDetailsTable(context),
               kHeight20,
-              const Text('Booking Details'),
-              bookingDetailsTable(),
+              Text('Booking Details',
+                  style: Theme.of(context).textTheme.titleMedium),
+              bookingDetailsTable(context),
               kHeight20,
-              const Text('User Details'),
-              userDetailsTable(),
+              Text('User Details',
+                  style: Theme.of(context).textTheme.titleMedium),
+              userDetailsTable(context),
+              kHeight20,
+              kHeight20,
               kHeight20,
               const EnterCouponCode(),
               kHeight20,
-              paymentMethod(),
+              kHeight20,
+              paymentMethod(context),
+              kHeight20,
+              Row(
+                children: const [
+                  Text(
+                    'Total Amount',
+                  ),
+                  Spacer(),
+                  Text('₹2000')
+                ],
+              ),
               kHeight20,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  TextButton(onPressed: () {}, child: Text('Cancel')),
+                  TextButton(onPressed: () {}, child: const Text('Cancel')),
+                  const Spacer(),
                   GreenButtonS(text: 'Confirm Booking', onPressed: () {})
                 ],
               )
@@ -52,21 +70,25 @@ class BookingConfirmationView extends GetView {
     );
   }
 
-  Row paymentMethod() {
+  Row paymentMethod(context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 40,
-          width: 70,
-          child: const Text(
+          // color: Colors.red,
+          height: 50,
+          width: 80,
+          child: Text(
             'Payment Method',
+            textAlign: TextAlign.start,
+            style: Theme.of(context).textTheme.titleMedium,
             softWrap: true,
           ),
         ),
         kWidth,
         Container(
           width: 100,
-          height: 30,
+          height: 50,
           // color: kLightGrey,
           decoration: BoxDecoration(
             borderRadius: kBorderRadius,
@@ -74,78 +96,109 @@ class BookingConfirmationView extends GetView {
           ),
 
           child: const Center(
-              child: Text('Morning', style: TextStyle(color: Colors.black))),
+            child: Text(
+              'Morning',
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
         ),
         kWidth20,
-        Text('Evening'),
+        const Text('Evening'),
       ],
     );
   }
 
-  Table centerDetailsTable() {
+  Table centerDetailsTable(context) {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(0.4),
         1: FractionColumnWidth(0.7),
       },
-      children: const [
+      children: [
         TableRow(children: [
-          Text('Name'),
-          Text('Gobrols Turf'),
+          Text(
+            'Name',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('Gobrols Turf'),
         ]),
         TableRow(children: [
-          Text('Phone no.'),
-          Text('8111949042'),
+          Text(
+            'Phone no.',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('8111949042'),
         ]),
         TableRow(children: [
-          Text('Location'),
-          Text('Cameron, Pickala'),
+          Text(
+            'Location',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('Cameron, Pickala'),
         ])
       ],
     );
   }
 
-  Table bookingDetailsTable() {
+  Table bookingDetailsTable(context) {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(0.4),
         1: FractionColumnWidth(0.7),
       },
-      children: const [
+      children: [
         TableRow(children: [
-          Text('Date'),
-          Text('27/08/2020'),
+          Text(
+            'Date',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('27/08/2020'),
         ]),
         TableRow(children: [
-          Text('Time'),
-          Text('09 - 10 AM'),
+          Text(
+            'Time',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('09 - 10 AM'),
         ]),
         TableRow(children: [
-          Text('Offers'),
-          Text('5%'),
+          Text(
+            'Offers',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('5%'),
         ])
       ],
     );
   }
 
-  Table userDetailsTable() {
+  Table userDetailsTable(context) {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(0.4),
         1: FractionColumnWidth(0.7),
       },
-      children: const [
+      children: [
         TableRow(children: [
-          Text('Name'),
-          Text('Morwin Delcarm'),
+          Text(
+            'Name',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('Morwin Delcarm'),
         ]),
         TableRow(children: [
-          Text('Phone no.'),
-          Text('8111949042'),
+          Text(
+            'Phone no.',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('8111949042'),
         ]),
         TableRow(children: [
-          Text('email'),
-          Text('kenloan@gmail.com'),
+          Text(
+            'email',
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          const Text('kenloan@gmail.com'),
         ])
       ],
     );
@@ -180,8 +233,8 @@ class EnterCouponCode extends StatelessWidget {
               width: 70,
               decoration: BoxDecoration(
                   borderRadius: kBorderRadius, color: kButtonGrey),
-              child: Center(
-                  child: Text(
+              child: const Center(
+                  child: const Text(
                 'Apply Coupon',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black),
