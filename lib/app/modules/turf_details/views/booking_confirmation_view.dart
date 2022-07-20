@@ -12,8 +12,8 @@ class BookingConfirmationView extends GetView {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Booking Confirmation'),
-        titleTextStyle: TextStyle(color: Colors.white),
+        title: const Text('Booking Confirmation'),
+        titleTextStyle: const TextStyle(color: Colors.white),
         centerTitle: true,
       ),
       body: Padding(

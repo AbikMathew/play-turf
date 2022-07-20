@@ -181,7 +181,7 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.white,
             ),
             onTap: () {
-              // Get.toNamed(AppPages.HOME);
+               Get.toNamed(Routes.PROFILE);
             },
           ),
           ListTile(

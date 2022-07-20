@@ -4,6 +4,8 @@ import 'package:play_turf/app/modules/my_booking/bindings/my_booking_binding.dar
 import 'package:play_turf/app/modules/my_booking/views/my_booking_view.dart';
 import 'package:play_turf/app/modules/onBoarding/bindings/on_boarding_binding.dart';
 import 'package:play_turf/app/modules/onBoarding/views/on_boarding_view.dart';
+import 'package:play_turf/app/modules/profile/bindings/profile_binding.dart';
+import 'package:play_turf/app/modules/profile/views/profile_view.dart';
 import 'package:play_turf/app/modules/splash/bindings/splash_binding.dart';
 import 'package:play_turf/app/modules/splash/views/splash_view.dart';
 import 'package:play_turf/app/modules/turf_details/bindings/turf_details_binding.dart';
@@ -58,6 +60,11 @@ class AppPages {
       name: _Paths.MY_BOOKING,
       page: () => MyBookingView(),
       binding: MyBookingBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }
