@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/login/views/sign_in_view.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../constants/ui.dart';
+import '../../widgets/custom_buttons.dart';
 
 class EditProfileView extends GetView {
   @override
@@ -36,6 +38,14 @@ class EditProfileView extends GetView {
                 labelText: 'Address',
                 hintText: 'Casilda, Kalathipady, Kottayam',
                 icon: Icons.house),
+            kHeight20,
+            kHeight20,
+            kHeight20,
+            GreenButton(
+              text: 'Submit',
+              onPressed: () {},
+              width: 90.w,
+            ),
           ],
         ),
       ),

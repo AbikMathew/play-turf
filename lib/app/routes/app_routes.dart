@@ -11,6 +11,7 @@ abstract class Routes {
   static const TURF_DETAILS = _Paths.TURF_DETAILS;
   static const MY_BOOKING = _Paths.MY_BOOKING;
   static const PROFILE = _Paths.PROFILE;
+  static const CART = _Paths.CART;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const TURF_DETAILS = '/turf-details';
   static const MY_BOOKING = '/my-booking';
   static const PROFILE = '/profile';
+  static const CART = '/cart';
 }
