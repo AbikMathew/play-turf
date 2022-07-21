@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:play_turf/app/routes/app_pages.dart';
+// import 'package:play_turf/app/routes/app_pages.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../widgets/custom_buttons.dart';
 import 'sign_in_view.dart';
-import 'sign_up_view.dart';
+// import 'sign_up_view.dart';
 
 class SignUpView extends GetView {
   @override
