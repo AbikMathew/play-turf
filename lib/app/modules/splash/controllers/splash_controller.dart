@@ -1,4 +1,4 @@
-import 'dart:developer';
+// import 'dart:developer';
 
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -21,11 +21,11 @@ class SplashController extends GetxController {
 
     if (getStorage.read('first_time') == false) {
       Future.delayed(const Duration(milliseconds: 1500), () {
-        Get.offAllNamed(Routes.ON_BOARDING);
+        Get.offAllNamed(Routes.HOME);
       });
     } else {
       Future.delayed(const Duration(milliseconds: 1500), () {
-        Get.offAllNamed(Routes.HOME);
+        Get.offAllNamed(Routes.ON_BOARDING);
         // Get.offAllNamed(Routes.SPLASH);
       });
     }

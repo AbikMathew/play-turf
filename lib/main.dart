@@ -10,7 +10,7 @@ import 'package:play_turf/app/modules/turf_details/views/booking_confirmation_vi
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'app/modules/login/views/sign_up_view.dart';
+// import 'app/modules/login/views/sign_up_view.dart';
 import 'app/routes/app_pages.dart';
 
 void main() async {

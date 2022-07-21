@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import 'package:play_turf/app/modules/cart/bindings/cart_binding.dart';
-import 'package:play_turf/app/modules/cart/views/cart_view.dart';
 import 'package:play_turf/app/modules/my_booking/bindings/my_booking_binding.dart';
 import 'package:play_turf/app/modules/my_booking/views/my_booking_view.dart';
 import 'package:play_turf/app/modules/onBoarding/bindings/on_boarding_binding.dart';
@@ -67,11 +65,6 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
-    ),
-    GetPage(
-      name: _Paths.CART,
-      page: () => CartView(),
-      binding: CartBinding(),
     ),
   ];
 }

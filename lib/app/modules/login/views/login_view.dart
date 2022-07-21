@@ -6,6 +6,7 @@ import 'package:play_turf/app/modules/login/views/sign_in_view.dart';
 import 'package:play_turf/app/modules/widgets/custom_buttons.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 import 'sign_up_view.dart';
 // import 'sign_in_view.temp';
@@ -45,7 +46,7 @@ class AlreadyHaveAccount extends StatelessWidget {
           style: Theme.of(context).textTheme.titleSmall,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () => Get.offAll(SignInView()),
           child: Text(
             'Sign in',
             style: Theme.of(context)

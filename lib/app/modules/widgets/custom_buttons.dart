@@ -141,7 +141,7 @@ class GoogleSingIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed(Routes.FAVORITES);
+        Get.offAllNamed(Routes.HOME);
       },
       child: Center(
         child: Container(

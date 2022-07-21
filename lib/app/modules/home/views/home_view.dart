@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:play_turf/app/routes/app_pages.dart';
 import 'package:sizer/sizer.dart';
 
@@ -23,8 +24,9 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
       Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          image: const DecorationImage(
             image: AssetImage("asset/images/turf/turf_landscape_2.jpg"),
             fit: BoxFit.cover,
           ),
@@ -43,8 +45,9 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
       Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          image: const DecorationImage(
             image: AssetImage("asset/images/turf/turf_image_3.jpg"),
             fit: BoxFit.cover,
           ),
@@ -53,7 +56,7 @@ class HomeView extends GetView<HomeController> {
     ];
 
     return Scaffold(
-        drawer: const CustomDrawer(),
+        drawer:  CustomDrawer(),
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
           elevation: 0,
@@ -117,10 +120,11 @@ class HomeView extends GetView<HomeController> {
 }
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({
+   CustomDrawer({
     Key? key,
   }) : super(key: key);
 
+final getBox = GetStorage();
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -181,7 +185,7 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.white,
             ),
             onTap: () {
-               Get.toNamed(Routes.PROFILE);
+              Get.toNamed(Routes.PROFILE);
             },
           ),
           ListTile(
@@ -205,6 +209,7 @@ class CustomDrawer extends StatelessWidget {
               color: Colors.white,
             ),
             onTap: () {
+              getBox.remove('first_time');
               // Get.toNamed(AppPages.HOME);
             },
           ),

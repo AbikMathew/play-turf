@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:play_turf/app/routes/app_pages.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../widgets/custom_buttons.dart';
@@ -46,6 +47,7 @@ class SignUpView extends GetView {
               text: 'Sign up',
               onPressed: () {
                 Get.to(SignInView());
+                // Get.offAllNamed(Routes.HOME);
               },
               width: 90.w,
             ),
