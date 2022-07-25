@@ -14,41 +14,47 @@ class SignInView extends GetView {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 2.h),
-            Text(
-              'Sign In',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            SizedBox(
-              height: 35.h,
-              width: 75.w,
-              child: Image.asset('asset/images/login/login.png'),
-            ),
-            SizedBox(height: 2.h),
-            const CustomTextField(
-                labelText: 'Username',
-                hintText: 'Enter your username',
-                icon: Icons.email_outlined),
-            // const CustomTextField(
-            //     labelText: 'Password',
-            //     hintText: 'Enter your password',
-            //     icon: Icons.key_outlined),
-            SizedBox(height: 10.h),
-            GreenButton(
-              text: 'Sign in',
-              onPressed: () {
-              signInController.signIn();
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 2.h),
+              Text(
+                'Sign In',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              SizedBox(
+                height: 35.h,
+                width: 75.w,
+                child: Image.asset('asset/images/login/login.png'),
+              ),
+              SizedBox(height: 2.h),
+              CustomTextField(
+                  labelText: 'Username 200',
+                  hintText: 'Enter your username',
+                  icon: Icons.email_outlined,
+                  controller: signInController.usernameEditingController),
+              CustomTextField(
+                labelText: 'Password',
+                hintText: 'Enter your password',
+                icon: Icons.key_outlined,
+                obscureText: true,
+                controller: signInController.passwordEditingController,
+              ),
+              SizedBox(height: 10.h),
+              GreenButton(
+                text: 'Sign in',
+                onPressed: () {
+                  signInController.signIn();
 
-                // Get.to(SignUpView());
-              },
-              width: 90.w,
-            ),
-            const SizedBox(height: 20),
-            const GoogleSingIn(),
-          ],
+                  // Get.to(SignUpView());
+                },
+                width: 90.w,
+              ),
+              const SizedBox(height: 20),
+              const GoogleSingIn(),
+            ],
+          ),
         ),
       ),
     );
@@ -61,15 +67,17 @@ class CustomTextField extends StatelessWidget {
     required this.labelText,
     required this.hintText,
     required this.icon,
+    required this.controller,
     this.suffixIcon,
-    this.controller,
+    this.obscureText = false,
   }) : super(key: key);
 
   final String labelText;
   final String hintText;
   final IconData icon;
   final IconData? suffixIcon;
-  TextEditingController? controller;
+  TextEditingController controller;
+  bool obscureText;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -77,13 +85,10 @@ class CustomTextField extends StatelessWidget {
         height: 10.h,
         width: 90.w,
         child: TextField(
+          obscureText: obscureText,
           cursorHeight: 20,
           autofocus: false,
-          // controller:
-          //     TextEditingController(text: "Initial Text here"),
-          onChanged: ((value) {
-            //  controller.text = value;
-          }),
+          controller: controller,
           decoration: InputDecoration(
             fillColor: kLightGrey,
             filled: true,

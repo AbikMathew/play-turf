@@ -35,6 +35,9 @@ migrate_working_dir/
 # Web related
 lib/generated_plugin_registrant.dart
 
+#API Utils
+lib/app/data/providers/api_providers.dart
+
 # Symbolication related
 app.*.symbols
 

@@ -56,7 +56,7 @@ class HomeView extends GetView<HomeController> {
     ];
 
     return Scaffold(
-        drawer:  CustomDrawer(),
+        drawer: CustomDrawer(controller: controller),
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
           elevation: 0,
@@ -120,11 +120,13 @@ class HomeView extends GetView<HomeController> {
 }
 
 class CustomDrawer extends StatelessWidget {
-   CustomDrawer({
+  CustomDrawer({
+    required this.controller,
     Key? key,
   }) : super(key: key);
 
-final getBox = GetStorage();
+  HomeController controller;
+  
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -209,7 +211,7 @@ final getBox = GetStorage();
               color: Colors.white,
             ),
             onTap: () {
-              getBox.remove('first_time');
+              controller.logout();
               // Get.toNamed(AppPages.HOME);
             },
           ),
