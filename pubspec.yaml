@@ -14,6 +14,7 @@ dependencies:
   smooth_page_indicator: 1.0.0+2
   carousel_slider: 4.1.1
   google_fonts: 3.0.1
+  dio: 4.0.6
   flutter: 
     sdk: flutter
 
@@ -29,9 +30,5 @@ flutter:
     - asset/images/login/
     - asset/images/favorites/
     - asset/images/turf/
-  # fonts: 
-  #   - family: Montserrat
-  #     fonts: 
-  #       - asset: asset/font/Montserrat-VariableFont_wght.ttf
   uses-material-design: true
 

@@ -25,18 +25,18 @@ class ChangePasswordView extends GetView {
             ),
             kHeight20,
             kHeight20,
-            const CustomTextField(
-                labelText: 'abkdd10@gmail.com',
-                hintText: 'E-mail ID',
-                icon: Icons.email),
-            const CustomTextField(
-                labelText: 'Password',
-                hintText: 'Enter new password',
-                icon: Icons.key),
-            const CustomTextField(
-                labelText: 'Confirm Password',
-                hintText: 'Re-enter new password',
-                icon: Icons.key),
+            // const CustomTextField(
+            //     labelText: 'abkdd10@gmail.com',
+            //     hintText: 'E-mail ID',
+            //     icon: Icons.email),
+            // const CustomTextField(
+            //     labelText: 'Password',
+            //     hintText: 'Enter new password',
+            //     icon: Icons.key),
+            // const CustomTextField(
+            //     labelText: 'Confirm Password',
+            //     hintText: 'Re-enter new password',
+            //     icon: Icons.key),
             // Spacer(),
             kHeight20,
             kHeight20,

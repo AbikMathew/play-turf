@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:play_turf/app/modules/constants/colors.dart';
 import 'package:play_turf/app/modules/constants/ui.dart';
+import 'package:play_turf/app/modules/login/controllers/sign_in_controller.dart';
 import 'package:play_turf/app/modules/login/views/sign_up_view.dart';
 import 'package:play_turf/app/modules/widgets/custom_buttons.dart';
 import 'package:sizer/sizer.dart';
 
 class SignInView extends GetView {
+  SignInController signInController = Get.put(SignInController());
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,15 +32,17 @@ class SignInView extends GetView {
                 labelText: 'Username',
                 hintText: 'Enter your username',
                 icon: Icons.email_outlined),
-            const CustomTextField(
-                labelText: 'Password',
-                hintText: 'Enter your password',
-                icon: Icons.key_outlined),
+            // const CustomTextField(
+            //     labelText: 'Password',
+            //     hintText: 'Enter your password',
+            //     icon: Icons.key_outlined),
             SizedBox(height: 10.h),
             GreenButton(
               text: 'Sign in',
               onPressed: () {
-                Get.to(SignUpView());
+              signInController.signIn();
+
+                // Get.to(SignUpView());
               },
               width: 90.w,
             ),
@@ -52,19 +56,20 @@ class SignInView extends GetView {
 }
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+  CustomTextField({
     Key? key,
     required this.labelText,
     required this.hintText,
     required this.icon,
     this.suffixIcon,
+    this.controller,
   }) : super(key: key);
 
   final String labelText;
   final String hintText;
   final IconData icon;
   final IconData? suffixIcon;
-  // final TextEditingController controller;
+  TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -76,6 +81,9 @@ class CustomTextField extends StatelessWidget {
           autofocus: false,
           // controller:
           //     TextEditingController(text: "Initial Text here"),
+          onChanged: ((value) {
+            //  controller.text = value;
+          }),
           decoration: InputDecoration(
             fillColor: kLightGrey,
             filled: true,

@@ -22,26 +22,26 @@ class SignUpView extends GetView {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             SizedBox(height: 5.h),
-            const CustomTextField(
-                labelText: 'Name',
-                hintText: 'Enter your name',
-                icon: Icons.person_outline),
-            const CustomTextField(
-                labelText: 'Phone no.',
-                hintText: 'Enter your phone number',
-                icon: Icons.phone_outlined),
-            const CustomTextField(
-                labelText: 'E-mail',
-                hintText: 'Enter your e-mail ID',
-                icon: Icons.email_outlined),
-            const CustomTextField(
-                labelText: 'Password',
-                hintText: 'Enter your password',
-                icon: Icons.key_outlined),
-            const CustomTextField(
-                labelText: 'Confirm Password',
-                hintText: 'Re-enter your password',
-                icon: Icons.key_outlined),
+            // const CustomTextField(
+            //     labelText: 'Name',
+            //     hintText: 'Enter your name',
+            //     icon: Icons.person_outline),
+            // const CustomTextField(
+            //     labelText: 'Phone no.',
+            //     hintText: 'Enter your phone number',
+            //     icon: Icons.phone_outlined),
+            // const CustomTextField(
+            //     labelText: 'E-mail',
+            //     hintText: 'Enter your e-mail ID',
+            //     icon: Icons.email_outlined),
+            // const CustomTextField(
+            //     labelText: 'Password',
+            //     hintText: 'Enter your password',
+            //     icon: Icons.key_outlined),
+            // const CustomTextField(
+            //     labelText: 'Confirm Password',
+            //     hintText: 'Re-enter your password',
+            //     icon: Icons.key_outlined),
             SizedBox(height: 10.h),
             GreenButton(
               text: 'Sign up',

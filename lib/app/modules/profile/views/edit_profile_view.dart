@@ -26,18 +26,18 @@ class EditProfileView extends GetView {
               ),
             ),
             kHeight20,
-            const CustomTextField(
-                labelText: 'Name',
-                hintText: 'Abik Mathew George',
-                icon: Icons.person),
-            const CustomTextField(
-                labelText: 'Phone no',
-                hintText: '8111903422',
-                icon: Icons.phone),
-            const CustomTextField(
-                labelText: 'Address',
-                hintText: 'Casilda, Kalathipady, Kottayam',
-                icon: Icons.house),
+            // const CustomTextField(
+            //     labelText: 'Name',
+            //     hintText: 'Abik Mathew George',
+            //     icon: Icons.person),
+            // const CustomTextField(
+            //     labelText: 'Phone no',
+            //     hintText: '8111903422',
+            //     icon: Icons.phone),
+            // const CustomTextField(
+            //     labelText: 'Address',
+            //     hintText: 'Casilda, Kalathipady, Kottayam',
+            //     icon: Icons.house),
             kHeight20,
             kHeight20,
             kHeight20,
