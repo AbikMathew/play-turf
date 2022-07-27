@@ -9,4 +9,6 @@ class ApiUri {
   static String getFavourites = '/get_favourites';
   static String addFavourite = '/addfavourites';
   static String bookingDatas = '/booking_details';
+  // static String get = '/booking_details';
+
 }
